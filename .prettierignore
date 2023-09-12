@@ -1,0 +1,12 @@
+# Artifacts
+build
+coverage
+
+# Files
+**/.git
+**/.svn
+**/.hg
+
+# Folders
+**/node_modules
+**/assets
