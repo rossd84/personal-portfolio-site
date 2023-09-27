@@ -1,4 +1,6 @@
 import React from 'react'
+import Section from './layouts/Section'
+// images
 import HTML from '../assets/html.png'
 import CSS from '../assets/css.png'
 import JavaScript from '../assets/javascript.png'
@@ -12,54 +14,68 @@ import BgImgMd from '../assets/bg/bg2-md.png'
 import BgImgSm from '../assets/bg/bg2-sm.png'
 
 const Skills = () => {
-	return (
-		<section 
-			name='skills' 
-			className='parallax w-full py-[10rem] text-primary_font bg-[image:var(--image-url-sm)] md:bg-[image:var(--image-url-md)] lg:bg-[image:var(--image-url-lg)]' 
-			style={{'--image-url-lg': `url(${BgImgLg})`, '--image-url-md': `url(${BgImgMd})`, '--image-url-sm': `url(${BgImgSm})`}}
-			aria-labelledby='skills-section-title'>
-			<div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-				<div>
-					<h2 id='skills-section-title' className='text-4xl font-bold inline border-b-4 border-accent'>Skills</h2>
-					<p className='py-4'>These are the technologies that I've worked with</p>
-				</div>
 
-				<div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-					<div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-primary p-2 rounded-md'>
-						<img className='w-20 mx-auto' src={HTML} alt='HTML icon' />
-						<p>HTML</p>
+	const skillList = [
+		{
+			name: 'HTML',
+			img: HTML,
+			imgAlt: "HTML icon"
+		},
+		{
+			name: 'CSS',
+			img: CSS,
+			imgAlt: "CSS icon"
+		},
+		{
+			name: 'JAVASCRIPT',
+			img: JavaScript,
+			imgAlt: "JavaScript icon"
+		},
+		{
+			name: 'REACT',
+			img: ReactImg,
+			imgAlt: "React icon"
+		},
+		{
+			name: 'GITHUB',
+			img: GitHub,
+			imgAlt: "GitHub icon"
+		},
+		{
+			name: 'NODE',
+			img: Node,
+			imgAlt: "NodeJS icon"
+		},
+		{
+			name: 'AWS',
+			img: AWS,
+			imgAlt: "AWS icon"
+		},
+		{
+			name: 'MONGODB',
+			img: Mongo,
+			imgAlt: "MongoDB icon"
+		},
+	]
+
+	return (
+		<Section 
+			header="Skills"
+			subheader="These are a few of the technologies that I've worked with"
+			classes='parallax w-full py-[10rem] text-primary_font bg-[image:var(--image-url-sm)] md:bg-[image:var(--image-url-md)] lg:bg-[image:var(--image-url-lg)]' 
+			style={{'--image-url-lg': `url(${BgImgLg})`, '--image-url-md': `url(${BgImgMd})`, '--image-url-sm': `url(${BgImgSm})`}}
+			ariaLabelledBy='skills-section-title'>
+
+					<div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center'>
+						{skillList.map(skill => (
+							<div key={skill.name} className='shadow-md shadow-primary-900 hover:scale-110 duration-500 bg-primary-500 p-4 rounded-md'>
+								<img className='w-20 mx-auto' src={skill.img} alt={skill.imgAlt} />
+								<p>{skill.name}</p>
+						</div>
+						))}
 					</div>
-					<div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-primary p-2 rounded-md'>
-						<img className='w-20 mx-auto' src={CSS} alt='CSS icon' />
-						<p>CSS</p>
-					</div>
-					<div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-primary p-2 rounded-md'>
-						<img className='w-20 mx-auto' src={JavaScript} alt='JavaScript icon' />
-						<p>JAVASCRIPT</p>
-					</div>
-					<div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-primary p-2 rounded-md'>
-						<img className='w-20 mx-auto' src={ReactImg} alt='React  icon' />
-						<p>REACT</p>
-					</div>
-					<div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-primary p-2 rounded-md'>
-						<img className='w-20 mx-auto' src={GitHub} alt='GitHub icon' />
-						<p>GITHUB</p>
-					</div>
-					<div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-primary p-2 rounded-md'>
-						<img className='w-20 mx-auto' src={Node} alt='Node icon' />
-						<p>NODE</p>
-					</div>
-					<div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-primary p-2 rounded-md'>
-						<img className='w-20 mx-auto' src={AWS} alt='AWS icon' />
-						<p>AWS</p>
-					</div>
-					<div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 bg-primary p-2 rounded-md'>
-						<img className='w-20 mx-auto' src={Mongo} alt='MongoDB icon' />
-						<p>MONGODB</p>
-					</div>
-				</div>
-			</div>
-		</section>
+
+		</Section>
 	)
 }
 

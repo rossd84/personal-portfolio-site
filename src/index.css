@@ -23,6 +23,12 @@
     }
 }
 
+input:focus,
+textarea:focus {
+  outline: 3px solid #14cf80;
+}
+
+
 .content-div {
     background-repeat: no-repeat;
     background-size: cover;
