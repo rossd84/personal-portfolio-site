@@ -12,10 +12,10 @@ const Section = (
 		children
 	}) => {
 	let sectionName = name ? name : 'section'
-	let ariaLabelledBy = 'section-title'
+	let ariaLabelledBy = name ? `${name}-section-title` : 'section-title'
 
-	if (header) {
-		sectionName = !name && header.toLowerCase();
+	if (header && !name) {
+		sectionName = header.toLowerCase();
 		ariaLabelledBy = `${header.toLowerCase()}-section-title`
 	}
 

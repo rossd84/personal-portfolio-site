@@ -4,16 +4,27 @@ import Section from './layouts/Section';
 
 const Contact = () => {
 	const [emailSent, setEmailSent] = useState(false);
+	const [formData, setFormData] = useState({
+		user_name: '',
+		user_email: '',
+		message: ''
+	})
 	const form = useRef();
 
 	const sendEmail = async (e) => {
 		e.preventDefault();
 
+		
 		if (emailSent === false) {
 
-			await emailjs.sendForm('service_j1d40vd', 'template_1w09a37', form.current, '_WoPKc3TgkpfOc_4W')
+			await emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE, process.env.REACT_APP_EMAIL_TEMPLATE, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
 				.then((result) => {
-						console.log(result.text);
+						console.log(formData);
+						setFormData({
+							user_name: '',
+							user_email: '',
+							message: ''
+						})
 				}, (error) => {
 						console.log(error.text);
 				});
@@ -23,11 +34,21 @@ const Contact = () => {
 
 	}
 
+	const handleInputChange = (e) => {
+
+		const { name, value } = e.target;
+		setFormData({
+			...formData,
+			[name]: value,
+		})
+	}
+
 
 	return (
 		<Section
 			header='Contact Me'
 			subheader='Submit the form below or shoot me an email - darbyross.dev@gmail.com'
+			name='contact'
 			bgColor='bg-secondary-500'
 		>
 				<form className='flex flex-col max-w-[600px] w-full text-primary-500' method='POST' ref={form} onSubmit={sendEmail}>
@@ -36,12 +57,16 @@ const Contact = () => {
 						type='text' 
 						placeholder='Name' 
 						name='user_name'
+						value={formData.user_name}
+						onChange={handleInputChange}
 						required />
 					<input 
 						className='my-4 p-2 bg-custom_gray-500 rounded-sm' 
 						type='email' 
 						placeholder='Email' 
 						name='user_email'
+						value={formData.user_email}
+						onChange={handleInputChange}
 						required
 					/>
 					<textarea 
@@ -49,6 +74,8 @@ const Contact = () => {
 					name='message' 
 					rows='10' 
 					placeholder='Message'
+					value={formData.message}
+					onChange={handleInputChange}
 					required
 					/>
 					<div >

@@ -12,7 +12,7 @@ const Footer = () => {
 				<ul id='footer-menu' className='flex' role='menu'>
 					{
 						navLinks.map(item => (
-							<li className="hover:text-secondary-200" role='presentation'>
+							<li key={item.name} className="hover:text-secondary-200" role='presentation'>
 								<Link to={item.link} smooth={true} duration={500} role='menuitem'>
 									{item.name}
 								</Link>

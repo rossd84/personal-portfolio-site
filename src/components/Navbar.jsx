@@ -83,7 +83,7 @@ const Navbar = () => {
 					}>
 					<ul id="mobile-menu" className='w-full flex flex-col items-center' role="menu" >
 						{navLinks.map(item => (
-							<li className='py-6 text-4xl' role="presentation">
+							<li key={item.name} className='py-6 text-4xl' role="presentation">
 								<Link onClick={handleClick} activeClass='font-bold' to={item.link} spy={true} smooth={true} duration={500} role="menuitem">
 									{item.name}
 								</Link>
@@ -94,28 +94,6 @@ const Navbar = () => {
 						<li role="presentation">
 							<div>
 								<ul id="social-menu-mobile" className='flex justify-between' role="menu">
-									{/* <li className='flex items-center' role="presentation">
-										<a
-											className='w-[60px] h-[60px] flex justify-center items-center text-grey-300'
-											href={socials.linkedin}
-											target='_blank'
-											rel='noreferrer'
-											role="menuitem"
-											aria-label='link to profile on LinkedIn'>
-											<FaLinkedin size={30} />
-										</a>
-									</li>
-									<li className='flex items-center' role="presentation">
-										<a
-											className='w-[60px] h-[60px] flex justify-center items-center text-grey-300'
-											href={socials.github}
-											target='_blank'
-											rel='noreferrer'
-											role="menuitem"
-											aria-label="link to profile on GitHub">
-											<FaGithub size={30} />
-										</a>
-									</li> */}
 									<li className='flex items-center' role="presentation">
 										<Link
 											onClick={handleClick}
@@ -143,6 +121,7 @@ const Navbar = () => {
 				<ul id='socials-menu' role='menu' aria-label='socials menu'>
 					{socialLinks.map(item => (
 						<li 
+							key={item.name}
 							className={`w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[0px] hover:shadow-lg duration-300 ${item.bgColor}`}
 							role='presentation'>
 							<a
