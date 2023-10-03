@@ -14,7 +14,8 @@
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    pre {
         @apply font-[Poppins]
     }
     li {
@@ -62,4 +63,24 @@ textarea:focus {
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
+}
+
+.navlink {
+    position: relative;
+}
+
+.navlink::after {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    content: "";
+    height: 3px;
+    width: 0;
+    background-color: #14cf80;
+    transition-timing-function: ease-in;
+    transition-duration: 250ms;
+}
+
+.navlink:hover::after {
+    width: 100%;
 }

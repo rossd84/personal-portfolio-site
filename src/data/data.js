@@ -1,33 +1,30 @@
-import Spartan from '../assets/projects/spartan-site.png'
-import Zoo from '../assets/projects/zoo-site.png'
-import Financial from '../assets/projects/financial-site.png'
-import Quizzer from '../assets/projects/quizzer.png'
+import { projFinancial, projQuizzer, projSpartan, projZoo } from '../assets'
 export const data = [
 	{
 		id: 1,
 		name: 'Spartan Mosquito',
-		image: Spartan,
+		image: projSpartan,
 		github: '',
 		live: 'https://spartanmosquito.com/'
 	},
 	{
 		id: 2,
 		name: 'Hattiesburg Zoo Ticketing System',
-		image: Zoo,
+		image: projZoo,
 		github: '',
 		live: 'https://hattiesburgzoo.com'
 	},
 	{
 		id: 3,
 		name: 'Financial Website Demo',
-		image: Financial,
+		image: projFinancial,
 		github: 'https://github.com/rossd84/data-finance-landingpage-demo',
 		live: ''
 	},
 	{
 		id: 4,
 		name: "Children's Math Quizzer",
-		image: Quizzer,
+		image: projQuizzer,
 		github: 'https://github.com/rossd84/children-math-quizzer',
 		live: ''
 	}

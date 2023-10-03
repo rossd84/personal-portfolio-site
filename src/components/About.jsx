@@ -5,7 +5,7 @@ const About = () => {
 	return (
 		<Section 
 			header="About"
-			bgColor='bg-secondary-500'
+			bgColor='bg-primary-700'
 		>
 			<div className='max-w-[1000px] w-full grid md:grid-cols-2 gap-8'>
 					<div className='text-2xl font-bold'>

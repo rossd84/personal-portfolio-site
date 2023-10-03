@@ -9,9 +9,10 @@ const Work = () => {
 
 	return (
 		<Section 
+			id='work'
 			header='Work' 
 			subheader='Check out some of my recent work'
-			color='bg-secondary-400'
+			bgColor='bg-primary-700'
 		>
 			{/* container for projects */}
 			<div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8'>
@@ -23,23 +24,31 @@ const Work = () => {
 						style={{ backgroundImage: `url(${item.image})` }}
 						className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center text-center items-center mx-auto content-div'>
 						{/* Hover effect for images */}
-						<div className='opacity-0 group-hover:opacity-100 content-div-overlay w-full h-full flex flex-col justify-center items-center duration-300'>
+						<div className='opacity-0 group-hover:opacity-100 content-div-overlay w-full h-full flex flex-col justify-between py-12 px-4 items-center duration-300'>
 							<span className='text-2xl font bold text-white tracking-wider '>{item.name}</span>
 							<div className='pt-8 text-center '>
 								{/* eslint-disable-next-line */}
-								<a href={item.github} target='_blank'>
-									<button
-										className='text-center rounded-lg w-[80px] py-2 m-2 bg-accent text-primary_font font-bold text-lg'>
-										Code
-									</button>
-								</a>
+								{item.github && (
+									<a href={item.github} target='_blank' rel="noreferrer">
+										<button
+											className={
+												item.live 
+												? 'text-center rounded-lg w-[80px] py-2 m-2 bg-accent text-primary_font font-bold text-lg'
+												: 'text-center rounded-lg w-[80px] py-2 m-2 border-2 border-accent text-primary_font font-bold text-lg'
+											}>
+											Code
+										</button>
+									</a>
+								)}
 								{/* eslint-disable-next-line */}
-								<a href={item.live} target='_blank'>
-									<button
-										className='text-center rounded-lg w-[80px] py-2 m-2 border-2 border-accent text-primary_font font-bold text-lg'>
-										Live
-									</button>
-								</a>
+								{item.live && 
+									<a href={item.live} target='_blank' rel="noreferrer">
+										<button
+											className='text-center rounded-lg w-[80px] py-2 m-2 border-2 border-accent text-primary_font font-bold text-lg'>
+											Live
+										</button>
+									</a>
+								}
 							</div>
 						</div>
 					</div>

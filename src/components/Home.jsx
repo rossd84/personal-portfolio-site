@@ -1,29 +1,46 @@
 import React from 'react'
 import Section from './layouts/Section'
 import { HiArrowNarrowRight } from 'react-icons/hi'
+import Typed from 'react-typed';
 import { Link } from 'react-scroll'
-import BgImgLg from '../assets/bg/bg-hero-lg.png'
-import BgImgMd from '../assets/bg/bg-hero-md.png'
-import BgImgSm from '../assets/bg/bg-hero-sm.png'
+import { heroLarge, heroMedium, heroSmall } from '../assets';
 
 const Home = () => {
+	const reactTypedList = [
+		"Full Stack",
+		"Frontend",
+		"Node.js",
+		"React",
+		"TypeScript",
+		"MongoDB",
+	]
 	return (
 		<Section
+			id='home'
 			classes='parallax w-full h-screen bg-[image:var(--image-url-sm)] md:bg-[image:var(--image-url-md)] lg:bg-[image:var(--image-url-lg)]'
-			style={{'--image-url-lg': `url(${BgImgLg})`, '--image-url-md': `url(${BgImgMd})`, '--image-url-sm': `url(${BgImgSm})`}}
+			style={{'--image-url-lg': `url(${heroLarge})`, '--image-url-md': `url(${heroMedium})`, '--image-url-sm': `url(${heroSmall})`}}
 			name='home'
 		>
-				<div className='max-w-[1200px] flex flex-col justify-center h-full'>
+				<div className='max-w-[1200px] flex flex-col justify-center h-full gap-2'>
 					<h1 className='flex flex-col'>
 						<span className='text-accent-500'>Hi, my name is</span>
-						<span className='text-4xl md:text-7xl font-bold text-custom_gray-500 pb-2 tracking-wide'>Darby Ross</span>
+						<span className='text-4xl md:text-7xl font-bold text-custom_gray-100 pb-2 tracking-wide'>Darby Ross</span>
 					</h1>
-					<h2 className='flex flex-col text-3xl md:text-6xl font-bold text-custom_gray-700 tracking-wide'>
-						I'm a Full Stack
+					<h2 className='flex flex-col text-3xl md:text-5xl font-medium text-custom_gray-600'>
+						<pre>
+							I'm a <Typed
+								className='text-accent-500'
+								strings={reactTypedList}
+								typeSpeed={80}
+								backSpeed={60}
+								backDelay={2000}
+								loop
+							/>
+						</pre>
 						<span>Developer</span>
 					</h2>
-					<p className='text-custom_gray-700 py-4 max-w-[700px]'>
-						I'm a full-stack developer specializing in building and designing exceptional digital experiences. Currently,
+					<p className='text-custom_gray-600 py-4 max-w-[700px]'>
+						I specialize in building and designing exceptional digital experiences. Currently,
 						I'm focused on building responsive full-stack web applications.
 					</p>
 					<div>
@@ -31,6 +48,7 @@ const Home = () => {
 							className='rounded-sm text-accent-500 hover:text-custom_gray-900 group border-2 px-6 py-3 my-2 flex items-center hover:bg-accent-500 border-accent-500 duration-200'
 							type='button'>
 							<Link
+								href='#work'
 								to='work'
 								spy={true}
 								smooth={true}

@@ -2,6 +2,7 @@ import React from 'react'
 
 const Section = (
 	{
+		id,
 		header, 
 		subheader,
 		name,
@@ -23,6 +24,7 @@ const Section = (
 
   return (
     <section 
+			id={id && id}
 			name={sectionName} 
 			className={classList}
 			style={style} 
@@ -32,7 +34,7 @@ const Section = (
 					header && 
 					<div className='max-w-[1000px] w-full mb-8 flex justify-center md:justify-start flex-col'>
 						<div className='flex'>
-							<h2 id='about-section-title' className='text-3xl md:text-4xl text-custom_gray-500 font-bold border-b-4 border-accent-500 tracking-wider'>{header}</h2>
+							<h2 id={`${name}-section-title`} className='text-3xl md:text-4xl text-custom_gray-500 font-bold border-b-4 border-accent-500 tracking-wider'>{header}</h2>
 						</div>
 						{
 							subheader && 
