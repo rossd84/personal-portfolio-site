@@ -15,13 +15,13 @@ const Work = () => {
 			bgColor='bg-primary-700'
 		>
 			{/* container for projects */}
-			<div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8'>
+			<div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto'>
 
 				{/* Grid Item */}
 				{project.map((item, index) => (
-					<div>
-						<div className='md:hidden mb-2'>
-							<h3 className='text-xl'>{item.name}</h3>
+					<div className='max-w-[425px]'>
+						<div className='lg:hidden mb-2'>
+							<h3 className='text-lg'>{item.name}</h3>
 						</div>
 						<div
 							key={index}

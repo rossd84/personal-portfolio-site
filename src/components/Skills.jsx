@@ -69,7 +69,7 @@ const Skills = () => {
 			style={{'--image-url-lg': `url(${bgLarge})`, '--image-url-md': `url(${bgMedium})`, '--image-url-sm': `url(${bgSmall})`}}
 			ariaLabelledBy='skills-section-title'>
 
-					<div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center'>
+					<div className='w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center'>
 						{skillList.map(skill => (
 							<div key={skill.name} className='shadow-md shadow-primary-900 hover:scale-110 duration-500 bg-primary-500 p-4 rounded-md'>
 								<img className='w-20 mx-auto' src={skill.img} alt={skill.imgAlt} />
