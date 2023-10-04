@@ -12,7 +12,7 @@ import {
 	skillMongo,
 	skillNode,
 	skillReact,
-	skillGithub
+	skillGit
 } from '../assets'
 
 
@@ -40,9 +40,9 @@ const Skills = () => {
 			imgAlt: "React icon"
 		},
 		{
-			name: 'GITHUB',
-			img: skillGithub,
-			imgAlt: "GitHub icon"
+			name: 'GIT',
+			img: skillGit,
+			imgAlt: "Git icon"
 		},
 		{
 			name: 'NODE',

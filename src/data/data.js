@@ -1,4 +1,4 @@
-import { projFinancial, projQuizzer, projSpartan, projZoo } from '../assets'
+import { projFinancial, projPuckett, projQuizzer, projSpartan, projZoo } from '../assets'
 export const data = [
 	{
 		id: 1,
@@ -16,16 +16,23 @@ export const data = [
 	},
 	{
 		id: 3,
+		name: "Puckett Machinery CMS",
+		image: projPuckett,
+		github: '',
+		live: ''
+	},
+	{
+		id: 4,
 		name: 'Financial Website Demo',
 		image: projFinancial,
 		github: 'https://github.com/rossd84/data-finance-landingpage-demo',
 		live: ''
 	},
 	{
-		id: 4,
+		id: 5,
 		name: "Children's Math Quizzer",
 		image: projQuizzer,
 		github: 'https://github.com/rossd84/children-math-quizzer',
 		live: ''
-	}
+	},
 ]

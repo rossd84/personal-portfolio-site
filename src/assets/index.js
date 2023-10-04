@@ -8,6 +8,7 @@ import projFinancial from './projects/financial-site.webp'
 import projQuizzer from './projects/quizzer.webp'
 import projSpartan from './projects/spartan-site.webp'
 import projZoo from './projects/zoo-site.webp'
+import projPuckett from './projects/puckett-logo.webp'
 import skillAws from './skills/aws.webp'
 import skillCss from './skills/css.webp'
 import skillHtml from './skills/html.webp'
@@ -15,7 +16,7 @@ import skillJs from './skills/javascript.webp'
 import skillMongo from './skills/mongo.webp'
 import skillNode from './skills/node.webp'
 import skillReact from './skills/react.webp'
-import skillGithub from './skills/github.webp'
+import skillGit from './skills/git-icon.webp'
 
 export {
   heroLarge,
@@ -28,6 +29,7 @@ export {
   projQuizzer,
   projSpartan,
   projZoo,
+  projPuckett,
   skillAws,
   skillCss,
   skillHtml,
@@ -35,6 +37,6 @@ export {
   skillMongo,
   skillNode,
   skillReact,
-  skillGithub
+  skillGit
 }
 
